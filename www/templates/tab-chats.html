@@ -1,0 +1,37 @@
+<ion-view view-title="Resource Statistics">
+  <ion-content>
+   <div class="row">
+    <div class="col-lg-3">
+        <div class="form-group">
+            <label>Year</label>
+            <select ng-model="year" ng-change="filterProjects()" class="form-control">
+                <option>2017</option>
+                <option>2018</option>
+                <option>2019</option>
+                <option>2020</option>
+                <option>2021</option>
+                <option>2022</option>
+                <option>2023</option>
+                <option>2024</option>
+                <option>2025</option>
+            </select>
+        </div>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;<div class="col-lg-6">
+        <div class="form-group">
+            <label>Project</label>
+            <select ng-model="selectedProject" ng-options="project.title for project in projects" ng-change="getResourceStat()" class="form-control">
+                <!--<option>Project Name</option>-->
+            </select>
+        </div>
+    </div>
+</div>
+<div class="card chart-card">
+      <div class="item item-text-wrap">
+        <canvas id="line" class="chart chart-bar" data="data" labels="chartLabel" series="chartSeries">
+        </canvas>
+      </div>
+   
+    </div>
+  </ion-content>
+</ion-view>
