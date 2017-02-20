@@ -173,7 +173,8 @@ angular.module('starter.controllers', [])
     $scope.data = [];
 
     $scope.getResourceStat = function(){
-        projectService.getResourceStatistics($scope.selectedProject._id).then(function(response){
+        console.log('project: '+$scope.selectedProject);
+        projectService.getResourceStatistics($scope.selectedProject.project._id).then(function(response){
             if(response.data.status){
                 $scope.projectReport = response.data.project;
                 $scope.projectBarChartData = {};

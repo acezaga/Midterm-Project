@@ -20,7 +20,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;<div class="col-lg-6">
         <div class="form-group">
             <label>Project</label>
-            <select ng-model="selectedProject" ng-options="project.title for project in projects" ng-change="getResourceStat()" class="form-control">
+            <select ng-model="selectedProject.project" ng-options="project.title for project in projects" ng-change="getResourceStat()" class="form-control">
                 <!--<option>Project Name</option>-->
             </select>
         </div>
@@ -28,7 +28,7 @@
 </div>
 <div class="card chart-card">
       <div class="item item-text-wrap">
-        <canvas id="line" class="chart chart-bar" data="data" labels="chartLabel" series="chartSeries">
+        <canvas id="line" class="chart-horizontal-bar" chart-data="data" chart-labels="chartLabel" chart-series="chartSeries">
         </canvas>
       </div>
    
